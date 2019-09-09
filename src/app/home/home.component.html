@@ -1,0 +1,19 @@
+<div class="s01"  [ngStyle]="{'background':body_background}">
+  <div class="container" *ngIf="showLoader">
+      <img class="custom-spinner-template" style="border-radius: 200px;" src="assets/app-assets/images/loading_gif.gif">
+      <div class="centered">Processing....</div>
+  </div>
+  <form *ngIf="!showLoader">
+    <fieldset>
+      <legend>Know what people think</legend>
+    </fieldset>
+    <div class="inner-form">
+      <div class="input-field first-wrap">
+        <input [(ngModel)]="search_keyword" required #name="ngModel" (keyup.enter)="search_query()" name="search_keyword" id="search" autocomplete="off" type="text" placeholder="What are you looking for?" />
+      </div>
+      <div class="input-field third-wrap">
+        <button (click)="search_query()" class="btn-search" type="button">Search</button>
+      </div>
+    </div>
+  </form>
+</div>
